@@ -278,8 +278,25 @@ namespace DataCollection
 
 
 
-            var g = humans1.Where(x => x.Name == "Kalle");
+            var g = humans1.Where(x => x.Name == "Kalle").FirstOrDefault().Name;
+            var h = humans1.Where(x => x.Age == 40).ToList();
+            var i = humans1.Where(x => x.Name.Contains("a")).ToList();
+            var j = humans1.Where(x => x.Name.StartsWith("M")).ToList();
 
+            foreach (var item in h)
+            {
+                Console.WriteLine(item.Name + " " + item.Age);
+            }
+            Console.WriteLine("Contains a");
+            foreach (var item in i)
+            {
+                Console.WriteLine(item.Name + " " + item.Age);
+            }
+            Console.WriteLine("\nStarts with M");
+            foreach (var item in j)
+            {
+                Console.WriteLine(item.Name + " " + item.Age);
+            }
             #endregion
             Console.ReadLine();
         }
