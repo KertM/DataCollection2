@@ -39,14 +39,7 @@ namespace DataCollection
             ////    Console.WriteLine(cars[index]);
             ////}
 
-            //var humans1 = new List<Human>
-            //{
-            //    new Human(){Name = "Kalle", Age = 20},
-            //    new Human(){Name = "Malle", Age = 25},
-            //    new Human(){Name = "Mari", Age = 14},
-            //    new Human(){Name = "Elmar", Age = 16},
-            //    new Human(){Name = "Juku", Age = 35},
-            //};
+
 
             //var human1 = new Human();
             //human1.Name = "Priit";
@@ -221,19 +214,73 @@ namespace DataCollection
 
             #region LINQ
 
-            //Andmekogum    
-            int[] numbers = new int[7] {0, 1, 2, 3, 4, 5, 6 };
+            ////Andmekogum    
+            //int[] numbers = new int[7] {0, 1, 2, 3, 4, 5, 6 };
 
-            //Loome Päringu
-            var evenNumQuery = (from num in numbers
-                           where (num % 2) == 0
-                           select num).Tolist();
-                           
-            int evenNumCount = evenNumQuery.Count();
-            
+            ////Loome Päringu
+            //var evenNumQuery = (  from num in numbers
+            //               where (num % 2) == 0
+            //               select num).Tolist();
+
+            //int evenNumCount = evenNumQuery.Count();
 
 
-                           #endregion
+            var humans1 = new List<Human>
+            {
+                new Human(){Name = "kalle", Age = 20},
+                new Human(){Name = "malle", Age = 25},
+                new Human(){Name = "mari", Age = 14},
+                new Human(){Name = "elmar", Age = 16},
+                new Human(){Name = "juku", Age = 35},
+            };
+
+            //int[] numbers = new int[7] { 0, 1, 2, 3, 4, 5, 6 };
+            //////Küsime inimesed kelle vanus on üle 20 ning järjestame tulemused
+            ////var query = (from element in humans1
+            ////             where element.Age > 20
+            ////             select element).ToList();
+            ////foreach (var item in query)
+            ////{
+            ////    Console.WriteLine(item.Name + " " + item.Age);
+            ////}
+
+
+            //var a = numbers.Contains(7);
+
+            //var b = false;
+            //foreach (var item in numbers)
+            //{
+            //    if (item == 6)
+            //        b = true;
+            //}
+            //Console.WriteLine(a);
+            //Console.WriteLine();
+
+
+            int[] numbers = new int[6] { 1, 2, 3, 4, 5, 6 };
+
+            var a = numbers.ElementAtOrDefault(15);
+            var b = numbers.FirstOrDefault();
+            var c = numbers.Take(3).ToList();
+            var d = numbers.Average();
+            var e = numbers.Max();
+            var f = numbers.Min();
+
+            Console.WriteLine("ElementAtOrDefault " + a);
+            Console.WriteLine("FirstOrDefault " + b);
+            Console.WriteLine("Take 3");
+            foreach (var item in c)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("Average " + d);
+            Console.WriteLine("Max " + e);
+
+
+
+            var g = humans1.Where(x => x.Name == "Kalle");
+
+            #endregion
             Console.ReadLine();
         }
     }
